@@ -18,6 +18,7 @@ def get_data(movie_id):
 @app.route('/get-files/<string:movie_id>/<string:season_index>')
 def get_movie_files(movie_id, season_index):
     response = requests.get(f"https://api.adjaranet.com/api/v1/movies/{movie_id}/season-files/{season_index}?source=adjaranet")
+    print(response.status_code)
     return response.json()
 
 if __name__ == "__main__":
